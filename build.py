@@ -65,15 +65,27 @@ def steps(items):
 
 # ============================================================ 6:00 · Dinner and networking
 add('w', f'''<section class="slide" data-cp="1">
-    <div class="two" style="grid-template-columns:1.15fr .85fr">
+    <div class="two" style="grid-template-columns:1.2fr 1fr">
       <div>
         <h1>AI Video<br><em>Night</em></h1>
-        <div class="when" style="margin-top:1.4rem;font-size:clamp(1.2rem,2.2vw,2.6rem)">Tue 3 Nov · 6:00 to 9:00 PM PT</div>
-        <div style="margin-top:.8rem;font-size:clamp(1rem,1.5vw,1.6rem);color:var(--ink-50)">AI Start Academy · 1769 15th St, San Francisco</div>
-        <div style="margin-top:1.6rem;font-size:clamp(1.05rem,1.7vw,1.9rem);font-weight:600">Live demo by Saurabh Khire · Crewbase Collective</div>
-        <div style="margin-top:.5rem;font-size:clamp(.95rem,1.4vw,1.5rem);color:var(--ink-50)">Co-hosted by AdaL, AI Start Academy, Nerd Conf</div>
+        <div class="when" style="margin-top:1.4rem;font-size:clamp(1.2rem,2.2vw,2.6rem)">Tue 3 Nov 2026 · 6:00 PM PT</div>
+        <div class="org" style="margin-top:2.4rem;gap:1.2rem;align-items:center">
+          <img src="img/jax-sf.jpg" alt="" style="width:clamp(90px,8vw,140px);height:clamp(90px,8vw,140px);border-radius:50%;object-fit:cover">
+          <div><b style="font-size:clamp(1.2rem,2vw,2.2rem)">Jax Koh</b><span class="when" style="display:block;font-size:clamp(.9rem,1.3vw,1.4rem)">DevRel at AdaL</span></div>
+        </div>
       </div>
-      <img src="img/ll/jump_start_t1.webp" alt="" style="width:100%;max-height:78vh;object-fit:contain">
+      <img src="img/poster.png" alt="" style="width:100%;max-height:78vh;object-fit:contain;border-radius:18px;box-shadow:0 30px 60px -30px rgba(28,26,22,.6)">
+    </div>
+  </section>''')
+
+add('w', f'''<section class="slide" data-cp="1">
+    <div class="photo">
+      <div>
+        <h2>Hi, I'm <em>Jax</em></h2>
+        {steps([("DevRel at AdaL", "San Francisco"), ("CS, Machine Learning", "University of Queensland"), ("Build Club Brisbane City Lead", "20 to 100+ per event"), ("Kuala Lumpur to Brisbane to SF", "")])}
+        <div class="when" style="margin-top:1.4rem;font-size:clamp(1rem,1.5vw,1.6rem)">X @jaxkoh_ · linkedin.com/in/jaxkoh</div>
+      </div>
+      <div class="polaroid"><img src="img/jax-sf.jpg" alt="Jax in San Francisco"></div>
     </div>
   </section>''')
 
@@ -94,7 +106,7 @@ add('w', f'''<section class="slide" data-cp="1">
     <h2>Tonight <em>· PT</em></h2>
     <div class="steps">
       <div><span class="i">6:00</span><span class="t">Dinner and networking</span><span class="s">redeem · install · Discord</span></div>
-      <div><span class="i">6:30</span><span class="t">Live demo: Saurabh builds a launch video</span></div>
+      <div><span class="i">6:30</span><span class="t">Live demo: a launch video with AdaL</span></div>
       <div><span class="i">7:00</span><span class="t">Make your own</span><span class="s">send prompts by 7:15</span></div>
       <div><span class="i">8:00</span><span class="t">Screening: top 10 videos</span></div>
       <div><span class="i">8:15</span><span class="t">Judging and winners</span></div>
@@ -102,7 +114,7 @@ add('w', f'''<section class="slide" data-cp="1">
   </section>''')
 
 # ============================================================ 6:30 · Live demo
-part('demo', 'Saurabh builds a<br><em>launch video</em>', 2)
+part('demo', 'Live: a<br><em>launch video</em>', 2)
 
 add('demo', '''<section class="slide center" data-cp="2">
     <div class="grid g4" style="grid-template-columns:repeat(2,1fr);max-width:70vw">
@@ -206,7 +218,7 @@ for i, (ag, sec) in enumerate(S):
     out_s.append(sec)
 
 AGENDA = [('w', '18:00', '18:30', 'Dinner and networking'),
-          ('demo', '18:30', '19:00', 'Live demo: Saurabh builds a launch video'),
+          ('demo', '18:30', '19:00', 'Live demo: a launch video with AdaL'),
           ('make', '19:00', '20:00', 'Make your own'),
           ('screen', '20:00', '20:15', 'Screening: top 10 videos'),
           ('judge', '20:15', '21:00', 'Judging and winners')]
