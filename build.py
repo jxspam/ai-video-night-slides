@@ -14,9 +14,8 @@ css = open(f'{H}/base.css').read() + open(f'{H}/extra.css').read() + open(f'{H}/
 
 # ---------- event kit ----------
 C = 'san-francisco-ai-video-night-2026-11'
-CODE = 'AIVIDEONIGHT-3LZE'
+GRANTS = 'https://adal.sylph.ai/grants?utm_source=slides&amp;utm_medium=event&amp;utm_campaign=san-francisco-ai-video-night-2026-11&amp;utm_content=slides_grants_1'
 # UTM-tagged and logged in the Growth Engine sheet (campaign san-francisco-ai-video-night-2026-11, source slides).
-PROMO   = 'https://adal.sylph.ai/sign-up?redirect_url=%2Fsubscription%3Ftier%3Dpro%26billing_interval%3Dmonthly%26promo%3DAIVIDEONIGHT-3LZE&amp;utm_source=slides&amp;utm_medium=event&amp;utm_campaign=san-francisco-ai-video-night-2026-11&amp;utm_content=slides_promo_claim_1'
 WEBSITE = 'https://adalagent.ai/?utm_source=slides&amp;utm_medium=event&amp;utm_campaign=san-francisco-ai-video-night-2026-11&amp;utm_content=slides_website_1'
 LIBRARY = 'https://adalagent.ai/launch-library?utm_source=slides&amp;utm_medium=event&amp;utm_campaign=san-francisco-ai-video-night-2026-11&amp;utm_content=slides_launch_library_1'
 DISCORD = 'https://discord.gg/tB9FEBp4SV'
@@ -80,13 +79,13 @@ add('w', f'''<section class="slide" data-cp="1">
 
 add('w', f'''<section class="slide" data-cp="1">
     <h2>While you <em>eat</em></h2>
-    {steps([("Redeem "+CODE, "1 month of Pro"), ("Install AdaL Desktop", "scan next slide"), ("Open your product folder", ""), ("Join Discord", "link top right")])}
+    {steps([("Apply for AdaL Grants", "$30 of credits"), ("Install AdaL Desktop", "scan next slide"), ("Open your product folder", ""), ("Join Discord", "link top right")])}
   </section>''')
 
 add('w', f'''<section class="slide" data-cp="1">
-    <h2>1 month of AdaL Pro, <em>free</em></h2>
+    <h2>$30 of AdaL credits, <em>free</em></h2>
     <div class="qrs" style="align-items:flex-start;margin-top:1.6rem">
-      <div><div class="qr" style="width:clamp(180px,18vw,300px)"><img alt="" data-qr="{PROMO}"></div><div style="margin-top:.6rem;font-weight:600;font-size:clamp(1rem,1.6vw,1.8rem)">Claim 1 month Pro</div><div style="font-size:clamp(.85rem,1.2vw,1.3rem);color:var(--ink-50)">Code {CODE} · valid to Nov 18</div></div>
+      <div><div class="qr" style="width:clamp(180px,18vw,300px)"><img alt="" data-qr="{GRANTS}"></div><div style="margin-top:.6rem;font-weight:600;font-size:clamp(1rem,1.6vw,1.8rem)">Apply for AdaL Grants</div><div style="font-size:clamp(.85rem,1.2vw,1.3rem);color:var(--ink-50)">7 days · no card</div></div>
       <div><div class="qr" style="width:clamp(180px,18vw,300px)"><img alt="" data-qr="{WEBSITE}"></div><div style="margin-top:.6rem;font-weight:600;font-size:clamp(1rem,1.6vw,1.8rem)">Install AdaL Desktop</div><div style="font-size:clamp(.85rem,1.2vw,1.3rem);color:var(--ink-50)">adalagent.ai</div></div>
     </div>
   </section>''')
