@@ -82,7 +82,8 @@ add('w', f'''<section class="slide" data-cp="1">
     <div class="photo">
       <div>
         <h2>Hi, I'm <em>Jax</em></h2>
-        {steps([("DevRel at AdaL", "San Francisco"), ("CS, Machine Learning", "University of Queensland"), ("Build Club Brisbane City Lead", "20 to 100+ per event"), ("Kuala Lumpur to Brisbane to SF", "")])}
+        <div class="when" style="margin-top:.6rem;font-size:clamp(1.1rem,1.9vw,2.1rem)">DevRel at AdaL · 2 months in</div>
+        {steps([("Product demos", "26 launch videos rebuilt with AdaL"), ("Events", "18 events since Sep · SF to Singapore"), ("Community", "ambassadors in 10 countries · Discord")])}
         <div class="when" style="margin-top:1.4rem;font-size:clamp(1rem,1.5vw,1.6rem)">X @jaxkoh_ · linkedin.com/in/jaxkoh</div>
       </div>
       <div class="polaroid"><img src="img/jax-sf.jpg" alt="Jax in San Francisco"></div>
@@ -144,6 +145,27 @@ pair('demo', 'Muse <em>to AdaL</em>', [vid('ll-10-ref', 'Muse original'), vid('l
 
 prompt('demo', 'Prompt <em>1</em>', "Video: LINK\n\n(Use the video attached to this post itself, not videos from related posts on the page. Keep all your files in the folder XXXX.)\n\nreverse engineering this video, how can you use AdaL video producer capabilities to produce such videos, audios, and other types of the assets (including effects, fonts, transitions, animations)", 2)
 prompt('demo', 'Prompt <em>2</em>', "ok replicate one using AdaL video producer from scratch", 2)
+
+# ---------- Next in SF (from the AdaL Luma calendar, cal-2aFsnO0QCkjMiWi) ----------
+CAL = 'https://luma.com/adalagent'
+NEXT = [('diwali', 'Diwali Founders Session', 'Fri 6 Nov · 5:30 PM', 'https://luma.com/adalagent-gzch'),
+        ('sglang', 'SGLang Summit 2026', 'Thu 12 Nov · 9:00 AM', 'https://luma.com/sglang-summit'),
+        ('multimodal', 'The Multimodal Hackathon', 'Fri 13 Nov · 3:00 PM', 'https://luma.com/adalagent-i97q'),
+        ('gtm', 'GTM Breakthrough Summit', 'Tue 17 Nov · 5:00 PM', 'https://luma.com/fblgtm')]
+cards = ''.join(f'''<a href="{u}" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:.5rem;min-width:0;color:inherit;text-decoration:none">
+        <img src="img/events/{k}.jpg" alt="" style="width:100%;aspect-ratio:1;object-fit:cover;border-radius:14px;box-shadow:0 20px 40px -24px rgba(28,26,22,.6)">
+        <b style="font-size:clamp(.95rem,1.4vw,1.5rem);line-height:1.2">{n}</b>
+        <span class="when" style="font-size:clamp(.8rem,1.1vw,1.2rem)">{d}</span></a>''' for k, n, d, u in NEXT)
+add('demo', f'''<section class="slide" data-cp="2">
+    <div style="display:flex;align-items:center;justify-content:space-between;gap:2rem">
+      <h2>Next in <em>SF</em></h2>
+      <div style="display:flex;align-items:center;gap:1rem">
+        <a class="qr" href="{CAL}" target="_blank" rel="noopener" style="width:clamp(100px,9vw,150px);display:block"><img alt="" data-qr="{CAL}"></a>
+        <div><div style="font-weight:600;font-size:clamp(1rem,1.6vw,1.8rem)">Sign up free</div><div class="when" style="font-size:clamp(.85rem,1.2vw,1.3rem)">luma.com/adalagent</div></div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(12px,1.6vw,28px);margin-top:1.4rem;width:100%">{cards}</div>
+  </section>''')
 
 # ============================================================ 7:00 · Make your own
 part('make', 'Make <em>your own</em>', 2)
