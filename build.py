@@ -90,6 +90,13 @@ add('w', f'''<section class="slide" data-cp="1">
     </div>
   </section>''')
 
+add('w', '''<section class="slide" data-cp="1">
+    <div class="two" style="grid-template-columns:1fr 1.5fr;align-items:center">
+      <div><h2 style="font-size:clamp(2rem,4.2vw,4.6rem)">Every model, <em>one app</em></h2><p class="quote" style="margin-top:1.4rem;font-size:clamp(1.1rem,1.9vw,2.1rem)">AdaL is the automation-first agent harness. AdaL stands out with Browser Use combined with multi model plans, comes with 10 major LLM providers and goes to audio, image and video generation. You can code, operate and GTM all at once.</p></div>
+      <video class="vid" style="width:100%;max-height:76vh" src="media/models-v3.mp4" poster="media/models-v3.jpg" autoplay loop muted playsinline></video>
+    </div>
+  </section>''')
+
 add('w', f'''<section class="slide" data-cp="1">
     <h2>Building is <em>fast</em>. GTM isn't.</h2>
     {steps([("Agents ship a feature in an afternoon", ""), ("Getting it seen still takes weeks", "agency, editor, motion designer"), ("The launch video is the first thing people see", ""), ("Tonight: you make yours", "")])}
