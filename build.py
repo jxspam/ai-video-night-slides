@@ -196,7 +196,7 @@ prompt('make', 'Product UI <em>skill</em>', "Make a product UI skill for my app.
 
 # Submit your video (placeholder until the form link exists)
 if SUBMIT:
-    submit_inner = qr(SUBMIT, 'Submit by 8:10 PM', 'Top 10 get screened · everyone who ships gets 2 months of Pro', 'clamp(200px,20vw,320px)')
+    submit_inner = qr(SUBMIT, 'Submit by 8:40 PM', 'Top 10 get screened · everyone who ships gets 2 months of Pro', 'clamp(200px,20vw,320px)')
 else:
     submit_inner = '''<div style="display:flex;align-items:center;gap:clamp(20px,3vw,48px);margin-top:2.4rem">
       <div class="qr" style="width:clamp(200px,20vw,320px);aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-style:dashed">
