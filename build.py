@@ -25,7 +25,7 @@ DISCORD_QR = 'https://api.qrserver.com/v1/create-qr-code/?size=600x600&amp;margi
 # Leave this empty until the submission link is ready. When set to a real URL the
 # "Submit your video" slide renders a live QR; while empty it shows a clearly marked
 # placeholder ("QR added on the night"). Jax: paste the link here, then rerun build.py.
-SUBMIT = ''
+SUBMIT = 'https://docs.google.com/forms/d/e/1FAIpQLSdBLZ4Wo9AarXj1-2ImFqrB3NUV6vsfxTCehQFDp49m-tOM0Q/viewform'  # form 1pzHM4WlFItH_DGpcbk2rILbsGylJOBJ-k3vNyGQBJP8 (jax@sylph.ai)
 
 S = []
 def add(ag, sec): S.append((ag, sec))
@@ -82,12 +82,17 @@ add('w', f'''<section class="slide" data-cp="1">
     <div class="photo">
       <div>
         <h2>Hi, I'm <em>Jax</em></h2>
-        <div class="when" style="margin-top:.6rem;font-size:clamp(1.1rem,1.9vw,2.1rem)">DevRel at AdaL · 2 months in</div>
-        {steps([("Product demos", "26 launch videos rebuilt with AdaL"), ("Events", "18 events since Sep · SF to Singapore"), ("Community", "ambassadors in 10 countries · Discord")])}
+        <div class="when" style="margin-top:.6rem;font-size:clamp(1.1rem,1.9vw,2.1rem)">DevRel at AdaL · 2 months</div>
+        {steps([("Product demos", ""), ("Events", ""), ("Community", "")])}
         <div class="when" style="margin-top:1.4rem;font-size:clamp(1rem,1.5vw,1.6rem)">X @jaxkoh_ · linkedin.com/in/jaxkoh</div>
       </div>
       <div class="polaroid"><img src="img/jax-sf.jpg" alt="Jax in San Francisco"></div>
     </div>
+  </section>''')
+
+add('w', f'''<section class="slide" data-cp="1">
+    <h2>Building is <em>fast</em>. GTM isn't.</h2>
+    {steps([("Agents ship a feature in an afternoon", ""), ("Getting it seen still takes weeks", "agency, editor, motion designer"), ("The launch video is the first thing people see", ""), ("Tonight: you make yours", "")])}
   </section>''')
 
 add('w', f'''<section class="slide" data-cp="1">
@@ -184,7 +189,7 @@ prompt('make', 'Product UI <em>skill</em>', "Make a product UI skill for my app.
 
 # Submit your video (placeholder until the form link exists)
 if SUBMIT:
-    submit_inner = qr(SUBMIT, 'Submit your video', 'Top 10 get screened', 'clamp(200px,20vw,320px)')
+    submit_inner = qr(SUBMIT, 'Submit by 7:50 PM', 'Top 10 get screened · everyone who ships gets 2 months of Pro', 'clamp(200px,20vw,320px)')
 else:
     submit_inner = '''<div style="display:flex;align-items:center;gap:clamp(20px,3vw,48px);margin-top:2.4rem">
       <div class="qr" style="width:clamp(200px,20vw,320px);aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-style:dashed">
@@ -210,7 +215,7 @@ add('judge', '''<section class="slide" data-cp="3">
 
 add('judge', f'''<section class="slide" data-cp="3">
     <h2>Claim your <em>prize</em></h2>
-    {steps([("Post your video tagging @adalagent", "X or LinkedIn"), ("Drop the link in Discord", "")])}
+    {steps([("Submit the form", "if not done yet"), ("Post your video tagging @adalagent", "X or LinkedIn"), ("Drop the link in Discord", "")])}
     {qr(DISCORD, 'discord.gg/tB9FEBp4SV', 'Join the room', 'clamp(130px,12vw,200px)')}
   </section>''')
 
@@ -265,7 +270,7 @@ out = f'''<!doctype html>
 </main>
 {agenda_html}
 <div class="toasts" id="toasts"></div>
-<div class="qrbar"><a class="slideqr dcqr" href="{DISCORD}" target="_blank" rel="noopener"><img alt="" src="{DISCORD_QR}"><div><div class="t">Discord</div><div class="u">Join + share</div></div></a><div class="slideqr"><img alt="" id="slideqr"><div><div class="t">Slides</div><div class="u" id="slideurl"></div><div class="count" id="count">1 / 1</div></div></div></div>
+<div class="qrbar"><div class="slideqr" style="padding:6px 16px"><div><div class="t">Wi-Fi · AI Start Academy-Guest</div><div class="u">password: guest123</div></div></div><a class="slideqr dcqr" href="{DISCORD}" target="_blank" rel="noopener"><img alt="" src="{DISCORD_QR}"><div><div class="t">Discord</div><div class="u">Join + share</div></div></a><div class="slideqr"><img alt="" id="slideqr"><div><div class="t">Slides</div><div class="u" id="slideurl"></div><div class="count" id="count">1 / 1</div></div></div></div>
 <div class="progress"><i id="bar"></i></div>
 <script>{js}</script>
 </body>
