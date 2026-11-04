@@ -112,10 +112,10 @@ add('w', f'''<section class="slide" data-cp="1">
     <h2>Tonight <em>· PT</em></h2>
     <div class="steps">
       <div><span class="i">6:00</span><span class="t">Dinner and networking</span><span class="s">redeem · install · Discord</span></div>
-      <div><span class="i">6:30</span><span class="t">Live demo: a launch video with AdaL</span></div>
-      <div><span class="i">7:00</span><span class="t">Make your own</span><span class="s">send prompts by 7:15</span></div>
-      <div><span class="i">8:00</span><span class="t">Screening: top 10 videos</span></div>
-      <div><span class="i">8:15</span><span class="t">Judging and winners</span></div>
+      <div><span class="i">6:50</span><span class="t">Live demo: a launch video with AdaL</span></div>
+      <div><span class="i">7:20</span><span class="t">Make your own</span><span class="s">send prompts by 7:35</span></div>
+      <div><span class="i">8:20</span><span class="t">Screening: top 10 videos</span></div>
+      <div><span class="i">8:35</span><span class="t">Judging and winners</span></div>
     </div>
   </section>''')
 
@@ -176,7 +176,7 @@ add('demo', f'''<section class="slide" data-cp="2">
 part('make', 'Make <em>your own</em>', 2)
 
 add('make', '''<section class="slide center" data-cp="2">
-    <h1 style="font-size:clamp(3rem,7vw,7.4rem)">Send prompt 1 by <em>7:15 PM</em></h1>
+    <h1 style="font-size:clamp(3rem,7vw,7.4rem)">Send prompt 1 by <em>7:35 PM</em></h1>
     <div class="when" style="margin-top:2rem;font-size:clamp(1.1rem,2vw,2.2rem);line-height:1.6">Renders take 30 to 40 min<br>Post in Discord: which reference, which model</div>
   </section>''')
 
@@ -189,7 +189,7 @@ prompt('make', 'Product UI <em>skill</em>', "Make a product UI skill for my app.
 
 # Submit your video (placeholder until the form link exists)
 if SUBMIT:
-    submit_inner = qr(SUBMIT, 'Submit by 7:50 PM', 'Top 10 get screened · everyone who ships gets 2 months of Pro', 'clamp(200px,20vw,320px)')
+    submit_inner = qr(SUBMIT, 'Submit by 8:10 PM', 'Top 10 get screened · everyone who ships gets 2 months of Pro', 'clamp(200px,20vw,320px)')
 else:
     submit_inner = '''<div style="display:flex;align-items:center;gap:clamp(20px,3vw,48px);margin-top:2.4rem">
       <div class="qr" style="width:clamp(200px,20vw,320px);aspect-ratio:1;display:flex;align-items:center;justify-content:center;border-style:dashed">
@@ -244,11 +244,11 @@ for i, (ag, sec) in enumerate(S):
     sec = sec.replace('>', '>' + f, 1).replace('<section ', f'<section data-ag="{ag}" ', 1)
     out_s.append(sec)
 
-AGENDA = [('w', '18:00', '18:30', 'Dinner and networking'),
-          ('demo', '18:30', '19:00', 'Live demo: a launch video with AdaL'),
-          ('make', '19:00', '20:00', 'Make your own'),
-          ('screen', '20:00', '20:15', 'Screening: top 10 videos'),
-          ('judge', '20:15', '21:00', 'Judging and winners')]
+AGENDA = [('w', '18:00', '18:50', 'Dinner and networking'),
+          ('demo', '18:50', '19:20', 'Live demo: a launch video with AdaL'),
+          ('make', '19:20', '20:20', 'Make your own'),
+          ('screen', '20:20', '20:35', 'Screening: top 10 videos'),
+          ('judge', '20:35', '21:00', 'Judging and winners')]
 import json
 agenda_html = '<aside class="ag" id="ag"><button class="ag-pill" id="agPill" type="button"><span class="ag-clock" id="agClock">--:--</span><span class="ag-now" id="agNow"></span><span class="ag-left" id="agLeft"></span></button><div class="ag-panel"><div class="label">Agenda · PT</div><ol id="agList"></ol></div></aside><script>window.AGENDA=' + json.dumps(AGENDA) + '</script>'
 
